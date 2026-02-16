@@ -5,9 +5,9 @@
     ami_id: "ami-0220d79f3f480ecf5"
     sg_id: "sg-0d4fbbcb5f7b89575"
     evn: dev
-  instances:
-  - mongodb
-  - catalogue
+    instances:
+    - mongodb
+    - catalogue
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
