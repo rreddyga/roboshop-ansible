@@ -1,5 +1,4 @@
 - name: Mongodb configuration
-  connection: mongodb
   hosts: mongodb
   become: yes
 
