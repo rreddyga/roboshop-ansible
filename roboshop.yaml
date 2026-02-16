@@ -12,9 +12,9 @@
   - name: create ec2 instance
     amazon.aws.ec2_instance:
       instance_type: "t3.micro"
-      security_id: "{{ sg_id }}"
+      security_group: "{{ sg_id }}"
       image_id: "{{ami_id}}"
-      name: "{{ item}}- {{evn_environment}}"
+      name: "{{ item}}-{{evn_environment}}"
       tags:
         Project: roboshop
         Component: "{{ item }}"
