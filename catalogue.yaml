@@ -53,9 +53,9 @@
       name: mongodb-mongosh
       state: present
 
-  - name: check catalouge schema products loaded
-    ansible.builtin.command: mongosh --host "{{MONGODB_HOST}}" --quiet --eval 'db.getMongo().getDBNames().indexOf("catalogue")'}}
-    register: catalouge_output
+  - name: check products loaded
+    ansible.builtin.command: mongosh --host "{{ MONGODB_HOST }}" --quiet  --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+    register: catalogue_output
 
   - name: print the output
     ansible.builtin.debug:
