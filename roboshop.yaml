@@ -23,7 +23,6 @@
         Component: "{{ item }}"
         Environment: "{{ item }}- {{evn_environment}}"
       wait: false
-      overwrite: true
     loop: "{{instances}}"
     register: ec2_output
     when: action == "create"
@@ -42,7 +41,6 @@
       value: "{{ item.instances[0].private_ip_address}}"
       ttl: 1
       wait: false
-      overwrite: true
     loop: "{{ec2_output.results}}"
     when: action == "create"
 
