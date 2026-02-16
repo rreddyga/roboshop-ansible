@@ -1,3 +1,4 @@
+# ansible-playbook -i localhost, -e '{"instances:["mongodb","catalogue","redis","user","cart","mysql","shipping","rabbitmq","payment","frontend"]"}' roboshop.yaml
 - name: create ec2 instance and route53 records
   hosts: all
   connection: local
@@ -21,6 +22,8 @@
         Project: roboshop
         Component: "{{ item }}"
         Environment: "{{ item }}- {{evn_environment}}"
+      wait: false
+      overwrite: true
     loop: "{{instances}}"
     register: ec2_output
     when: action == "create"
@@ -38,7 +41,8 @@
       type: A
       value: "{{ item.instances[0].private_ip_address}}"
       ttl: 1
-      wait: true
+      wait: false
+      overwrite: true
     loop: "{{ec2_output.results}}"
     when: action == "create"
 
