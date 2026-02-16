@@ -1,6 +1,6 @@
 - name: create ec2 instance and route53 records
   hosts: all
-  connecion: local
+  connection: local
   vars:
     ami_id: "ami-0220d79f3f480ecf5"
     sg_id: "sg-0d4fbbcb5f7b89575"
