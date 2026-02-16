@@ -31,7 +31,6 @@
     when: action == "create"
     #pip3.9 install botocore boto3 we have to install
   - name: create r53 record
-
     amazon.aws.route53:
       state: present
       zone: "{{domain_name}}"
@@ -69,7 +68,6 @@
     when: action == "destroy"
 
   - name: delete ec2 instance
-
     amazon.aws.ec2_instance:
       state: absent
       name: "{{ item }}- {{ evn_environment }}"
