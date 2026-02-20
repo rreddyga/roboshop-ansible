@@ -1,4 +1,8 @@
+# create the instances use the below command
 # ansible-playbook -i localhost, -e '{"instances":["mongodb","catalogue","redis","user","cart","mysql","shipping","rabbitmq","payment","frontend"]}' roboshop.yaml
+
+# destroy the instances 
+# ansible-playbook -i localhost, -e '{"instances":["mongodb","catalogue","redis","user","cart","mysql","shipping","rabbitmq","payment","frontend"]}'  action=destroy roboshop.yaml
 - name: create ec2 instance and route53 records
   hosts: all
   connection: local
