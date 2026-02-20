@@ -35,7 +35,7 @@
     ansible.builtin.debug:
       msg: "{{ec2_output }}"
     when: action == "create"
-    #pip3.9 install botocore boto3 we have to install
+  #pip3.9 install botocore boto3 we have to install
   - name: create r53 record
     amazon.aws.route53:
       state: present
