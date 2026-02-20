@@ -69,7 +69,7 @@
       executable: pip3.9
     loop:
     - PyMySQL
-    - crypography
+    - cryptography
 
   - name: load shipping data
     community.mysql.mysql_db:
