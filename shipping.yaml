@@ -45,7 +45,7 @@
       remote_src: yes
 
   - name: install maven dependencies
-    ansible.builtin.commad: mvn clean package
+    ansible.builtin.command: mvn clean package
     args:
       chdir: /app # the above command run on /app directory
 
